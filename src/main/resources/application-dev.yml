@@ -1,0 +1,93 @@
+server:
+  port: 8000
+
+name: "Spring"
+environments:
+  dev:
+    url: http://dev.example.com
+    name: Developer Setup
+  prod:
+    url: http://another.example.com
+    name: My Cool App
+
+spring:
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+        fixed:
+          enabled: true
+          paths: /js/lib
+          version: v12  #版本控制策略，使用/v12/js/lib访问
+  #  banner:
+#    image:
+#      location:
+#    location: banner.txt
+#    charset: UTF-8
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: system
+    password: 123456
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 30
+        min-idle: 30
+        max-active: 300
+        max-wait: -1
+    database: 0
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/spring
+  mybatis:
+    mapper-locations: classpath:mapper/**/*.xml
+  mvc:
+    static-path-pattern: /resources/**
+    favicon:
+      enabled: true
+  thymeleaf:
+    cache: false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  devtools:
+    restart:
+#      exclude: static/**,public/**
+      enabled: false
+      poll-interval: 1000
+    remote:
+      secret: mysecret
+  main:
+    banner-mode: "console"
+  output:
+    ansi:
+      enabled: always
+logging:
+  path: classpath:logback.xml
+  group:
+    tomcat: org.apache.catalina, org.apache.coyote, org.apache.tomcat
+  level:
+    tomcat: trace
+
+amazon:
+  associateId:habuma-20
+
+local:
+  server:
+    port:8000
+trace: false
+
+---
+spring:
+  profiles: pro
+#    include:
+#      - proddb
+#      - prodmq
+logging:
+  path: logback.xml.bak
+

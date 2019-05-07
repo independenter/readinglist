@@ -1,0 +1,33 @@
+acme:
+  enabled: false
+  remoteAddress: 127.0.0.1
+  security:
+    username: system
+    password: 123456
+    roles:
+      - USER
+      - ADMIN
+  map:
+    key1: dev name 1
+    key2: dev name 2
+
+my:
+  secret: ${random.value}
+  number: ${random.int}
+  bignumber: ${random.long}
+  uuid: ${random.uuid}
+  number.less.than.ten: ${random.int(10)}
+  number.in.range: ${random.int[1024,65536]}
+  servers: ##list
+    - dev.example.com
+    - another.example.com
+
+app:
+  name: MyApp
+  description: ${app.name} is a Spring Boot application
+  system:
+    sessionTimeout: 6000
+    readTimeout: 1000
+  io:
+    bufferSize: 500
+    sizeThreshold: 3
