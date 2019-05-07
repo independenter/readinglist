@@ -19,11 +19,11 @@ import java.util.EnumSet;
 
 
 //应用程序的启动类
-@EnableAutoConfiguration(exclude = {
+//@EnableAutoConfiguration()
+@SpringBootApplication(exclude = {
 		org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
 		//DataSourceAutoConfiguration.class,
-})
-@SpringBootApplication //开启组件扫描和自动配置  可用@ComponentScan代替
+}) //开启组件扫描和自动配置  @Configuration,@EnableAutoConfiguration和 @ComponentScan
 @ServletComponentScan
 public class ReadinglistApplication {
 
@@ -65,7 +65,7 @@ public class ReadinglistApplication {
 	 * 过滤所有过来的请求4
 	 * @return
 	 */
-	@Bean
+	//@Bean
 	public FilterRegistrationBean myFilter() {
 		FilterRegistrationBean registration = new FilterRegistrationBean();
 		//registration.setFilter(new MyFilter());

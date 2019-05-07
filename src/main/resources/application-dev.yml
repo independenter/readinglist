@@ -1,5 +1,6 @@
 server:
   port: 8000
+  address: www.yixiubb.com
 
 name: "Spring"
 environments:
@@ -12,15 +13,15 @@ environments:
 
 spring:
   resources:
-    chain:
-      strategy:
-        content:
-          enabled: true
-          paths: /**
-        fixed:
-          enabled: true
-          paths: /js/lib
-          version: v12  #版本控制策略，使用/v12/js/lib访问
+#    chain:
+#      strategy:
+#        content:
+#          enabled: true
+#          paths: /**
+#        fixed:
+#          enabled: true
+#          paths: /js/lib
+#          version: v12  #版本控制策略，使用/v12/js/lib访问
   #  banner:
 #    image:
 #      location:
