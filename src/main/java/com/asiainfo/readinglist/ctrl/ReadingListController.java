@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * http://localhost:8000/rl/readinglist
+ * http://www.yixiubb.com:8000/rl/readinglist
  * @EnableAutoConfiguration(exclude = { //禁用登录
 org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
 })

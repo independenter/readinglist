@@ -1,6 +1,9 @@
 server:
   port: 8000
   address: www.yixiubb.com
+  servlet:
+    session:
+      timeout:6000
 
 name: "Spring"
 environments:
@@ -45,7 +48,7 @@ spring:
     mongodb:
       uri: mongodb://127.0.0.1:27017/spring
   mybatis:
-    mapper-locations: classpath:mapper/**/*.xml
+    mapper-locations: classpath*:mapper/**/*.xml
   mvc:
     static-path-pattern: /resources/**
     favicon:
@@ -53,6 +56,12 @@ spring:
   thymeleaf:
     cache: false
   jpa:
+    properties:
+      hibernate:
+        auto: update
+        #dialect:
+        connection:
+          release_mode: auto
     show-sql: true
     hibernate:
       ddl-auto: validate

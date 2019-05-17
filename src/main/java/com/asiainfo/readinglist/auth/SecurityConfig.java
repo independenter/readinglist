@@ -13,9 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-//@Configuration
-//@EnableWebSecurity
-//@EnableGlobalMethodSecurity(prePostEnabled = true)  //  启用方法级别的权限认证
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)  //  启用方法级别的权限认证
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //@Override
@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //            .failureUrl("/error");
 
         http.authorizeRequests()
-                .antMatchers("/", "/index.html").permitAll()
+                .antMatchers("/**", "/index.html").permitAll()
                 .anyRequest().authenticated()   // 其他地址的访问均需验证权限
                 .and()
                 .formLogin()

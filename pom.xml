@@ -22,6 +22,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+        <!--mybatis版本-->
+        <mybatis-spring.version>1.3.2</mybatis-spring.version>
+        <!--mybatis 分页插件版本-->
+        <mybatis-pagehelper.version>4.1.0</mybatis-pagehelper.version>
 	</properties>
 
 	<dependencies>
@@ -57,6 +61,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
+        <!--引入数据库连接-->
+        <!--<dependency>-->
+            <!--<groupId>org.mybatis.spring.boot</groupId>-->
+            <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+            <!--<version>${mybatis-spring.version}</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash;mybatis分页插件&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.github.pagehelper</groupId>-->
+            <!--<artifactId>pagehelper</artifactId>-->
+            <!--<version>${mybatis-pagehelper.version}</version>-->
+        <!--</dependency>-->
 
 		<!--mongodb支持-->
 		<dependency>

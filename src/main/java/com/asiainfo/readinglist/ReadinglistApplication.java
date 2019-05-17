@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.*;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,7 @@ import java.util.EnumSet;
 //应用程序的启动类
 //@EnableAutoConfiguration()
 @SpringBootApplication(exclude = {
-		org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
+		SecurityAutoConfiguration.class,
 		//DataSourceAutoConfiguration.class,
 }) //开启组件扫描和自动配置  @Configuration,@EnableAutoConfiguration和 @ComponentScan
 @ServletComponentScan
